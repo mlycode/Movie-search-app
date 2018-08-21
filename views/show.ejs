@@ -1,12 +1,19 @@
-<h1>Show page</h1>
+<% include ./partials/header %>
 
-<p>
-    <%= showData["Title"] %>
-    <%= showData["Year"] %>
-</p>
+<div class="container">
+    <h1>Show page</h1>
 
-<p>
-    <%= showData["Plot"] %>
-</p>
+    <p>
+        <%= showData["Title"] %>
+        <%= showData["Year"] %>
+    </p>
+    
+    <p>
+        <%= showData["Plot"] %>
+    </p>
+    
+    <a href="#" onclick="history.go(-1)">Go Back</a>
+</div>
 
-<a href="#" onclick="history.go(-1)">Go Back</a>
+
+<% include ./partials/footer %>

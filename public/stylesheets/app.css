@@ -1,0 +1,15 @@
+ul {
+  list-style: none;
+}
+
+#searchForm {
+    text-align: center;
+    margin: auto;
+    margin-top: 15%;
+    max-width: 500px
+}
+
+#searchResults {
+    text-align: center;
+}
+

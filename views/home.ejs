@@ -1,6 +1,17 @@
-<h1>Home page</h1>
+<% include ./partials/header %>
 
-<form action="/results" method="GET">
-    <input type="text" placeholder="Movie title" name="movieSearch" required>
-    <button>Search!</button>
-</form>
+<div class="container" id="searchForm">
+    <h1>Search for a Movie!</h1>
+    
+    <form action="/results" method="GET">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Movie title" name="movieSearch" required>
+        </div>
+        <div class="form-group">
+            <button class="form-control btn btn-primary">Search!</button>
+        </div>
+    </form>
+</div>
+
+
+<% include ./partials/footer %>
