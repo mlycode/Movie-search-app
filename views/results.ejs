@@ -1,0 +1,15 @@
+<h1>Results page</h1>
+
+<% if(data["Search"]) { %>
+
+    <ul>
+            <% data["Search"].forEach(function(movie){ %>
+            <li><%= movie["Title"] %></li>
+        <% }) %>
+    </ul>
+
+<% } else { %>
+    <p>Could not find movie</p>
+<% } %>
+
+<a href="/">Search Again!</a>
