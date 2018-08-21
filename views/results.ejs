@@ -3,8 +3,12 @@
 <% if(data["Search"]) { %>
 
     <ul>
-            <% data["Search"].forEach(function(movie){ %>
-            <li><%= movie["Title"] %></li>
+        <% data["Search"].forEach(function(movie){ %>
+            <li>
+                <%= movie["Title"] %>
+                <a href="/results/<%=movie["imdbID"]%>">more info</a>
+                </li>
+            
         <% }) %>
     </ul>
 

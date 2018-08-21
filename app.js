@@ -30,7 +30,18 @@ app.get("/results", function(req, res){
 });
 
 //movie id show
-
+app.get("/results/:id", function(req, res){
+    var movieID = req.params.id;
+    request("http://www.omdbapi.com/?i=" + movieID + "&plot=full&apikey=thewdb", function(error, response, body){
+        if(error){
+            console.log(error);
+            res.redirect("back");
+        } else {
+            var showData = JSON.parse(body);
+            res.render("show", {showData: showData});
+        }
+    });
+});
 
 
 
