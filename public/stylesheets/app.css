@@ -1,3 +1,7 @@
+body {
+    background-color: #bcbcbc;
+}
+
 ul {
   list-style: none;
 }
@@ -13,3 +17,25 @@ ul {
     text-align: center;
 }
 
+.carousel {
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.carousel-inner img{
+    height: 70%;
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+
+.strokeme
+{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
