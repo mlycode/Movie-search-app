@@ -1,16 +1,81 @@
 <% include ./partials/header %>
 
 <div class="container">
-    <h1>Show page</h1>
-
-    <p>
-        <%= showData["Title"] %>
-        <%= showData["Year"] %>
-    </p>
-    
-    <p>
-        <%= showData["Plot"] %>
-    </p>
+    <div class="row">
+        <div class="col-3">
+            <div class="card mb-3">
+                <img class="card-img-top" src=<%= showData["Poster"] %>>
+                <div class="card-body">
+                    <div class="cardContent">
+                    <p><strong>Title: </strong><%=showData["Title"]%> (<%=showData["Type"]%>)</p>
+                    </div>
+                    <div class="cardContent">
+                    <p><strong>Director: </strong><%=showData["Director"]%> - <%=showData["Country"]%></p>
+                    </div>
+                    <div class="cardContent">
+                    <p><strong>Rated: </strong><%=showData["Rated"]%></p>
+                    </div>
+                    <div class="cardContent">
+                    <p><strong>Runtime: </strong><%=showData["Runtime"]%></p>
+                    </div>
+                    <div class="cardContent">
+                    <p><strong>Release Date: </strong><%=showData["Released"]%></p>
+                    </div>
+                    <div class="cardContent">
+                    <p><strong>Genre: </strong><%=showData["Genre"]%></p>
+                    </div>
+                    <div class="cardContent">
+                    <p><strong>Language: </strong><%=showData["Language"]%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card p-2">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-plot-tab" data-toggle="tab" href="#nav-plot" role="tab" aria-controls="nav-plot" aria-selected="true">Summary</a>
+                        <a class="nav-item nav-link" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" role="tab" aria-controls="nav-staff" aria-selected="false">Staff</a>
+                        <a class="nav-item nav-link" id="nav-rating-tab" data-toggle="tab" href="#nav-rating" role="tab" aria-controls="nav-rating" aria-selected="false">Ratings</a>
+                    </div>
+                </nav>
+                <div class="tab-content m-3" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-plot" role="tabpanel" aria-labelledby="nav-plot-tab">
+                        <h2><%=showData["Title"]%></h2>
+                        <p>
+                            <%= showData["Plot"] %>
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-staff" role="tabpanel" aria-labelledby="nav-staff-tab">
+                        <h3>Directors:</h3>
+                        <p>
+                            <%= showData["Director"] %>
+                        </p>
+                        <h3>Writers:</h3>
+                        <p>
+                            <%= showData["Writer"] %>
+                        </p>
+                        <h3>Actors:</h3>
+                        <p>
+                            <%= showData["Actors"] %>
+                        </p>
+                        <h3>Production:</h3>
+                        <p>
+                            <%= showData["Production"] %>, <a href=<%= showData["Website"] %> target="_blank"><%= showData["Website"] %></a>
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-rating" role="tabpanel" aria-labelledby="nav-rating-tab">
+                        <% showData["Ratings"].forEach(function(ratings){ %>
+                            <h3><%=ratings["Source"]%>:</h3>
+                            <p><%=ratings["Value"]%></p>
+                        <% }) %>
+                    </div>
+                </div>  
+            </div>
+            
+        </div>
+        
+    </div>
     
     <a href="#" onclick="history.go(-1)">Go Back</a>
 </div>

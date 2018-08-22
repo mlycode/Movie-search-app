@@ -1,5 +1,6 @@
 body {
     background-color: #bcbcbc;
+    margin-top: 50px;
 }
 
 ul {
@@ -23,17 +24,22 @@ ul {
     margin: 0 auto;
 }
 
-/*.carousel-inner img{*/
-/*    height: 70%;*/
-/*    width: 70%;*/
-/*    display: block;*/
-/*    margin: auto;*/
-/*}*/
-
 .carousel-inner img {
     height: 680px;
     width: auto;
     margin: auto;
+}
+
+.cardContent {
+    display: table;
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px dashed grey;
+}
+
+.cardContent p {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .strokeme
