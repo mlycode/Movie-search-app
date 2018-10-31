@@ -1,6 +1,9 @@
 body {
     background-color: #bcbcbc;
-    margin-top: 50px;
+}
+
+.navbar {
+    margin-bottom: 60px;
 }
 
 ul {

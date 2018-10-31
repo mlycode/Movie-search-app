@@ -43,7 +43,10 @@ app.get("/results/:id", function(req, res){
     });
 });
 
-
+//auth page
+app.get("/signin", function(req, res) {
+    res.render("auth");
+});
 
 
 
