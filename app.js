@@ -1,12 +1,20 @@
-var express = require("express"),
-    app     = express(),
-    request = require("request"),
-    bodyParser = require("body-parser");
+var express                 = require("express"),
+    app                     = express(),
+    request                 = require("request"),
+    bodyParser              = require("body-parser"),
+    mongoose                = require("mongoose"),
+    passport                = require("passport"),
+    LocalStrategy           = require("passport-local"),
+    passportLocalMongoose   = require("passport-local-mongoose");
 
 //APP CONFIG
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//DB CONFIG
+mongoose.connect("mongodb://localhost/movie_search_app", { useNewUrlParser: true });
+var User = require("./models/user");
 
 //ROUTES
 
